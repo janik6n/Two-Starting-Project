@@ -5,7 +5,16 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - main
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feat-*' # feat-1, feat-a
+      - 'fix/**' # fix/version, fix/button
+    # paths:
+    #   - 'prod/**' # run only if code in this path (and above branches) changed
 
 jobs:
   deploy:
